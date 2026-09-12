@@ -18,7 +18,7 @@
   <img src="https://img.shields.io/badge/GitHub-404040?style=flat-square&labelColor=0070C0&logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/NetworkWalks-404040?style=flat-square&labelColor=C00000" />
   <img src="https://img.shields.io/badge/Ethical%20Hacking-E87500?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Waqas%20Karim%20CCIE-C00000?style=flat-square" />
+  <img src="https://img.shields.io/badge/Networkwalks%20-C00000?style=flat-square" />
 </p>
 
 ---
@@ -192,6 +192,30 @@ Display:
 <img width="1532" height="911" alt="Screenshot 2026-09-12 152825" src="https://github.com/user-attachments/assets/0ce105d3-14e1-43da-9f28-fc1adbbd2788" />
 SCREENSHOT: Android VM display/network settings
 
+Few extra things to note:
+Attach the ISO and start install
+• Go to Settings > Storage
+• Click the empty disk icon under Controller
+• Choose the Android-x86 9.0 ISO you downloaded
+• Go to Settings > Display, set Video Memory to at least 64 MB, and enable 3D
+Acceleration , here if the Android gets stuck on the "Android" screen its better to disable 3D acceleartions and choose VBoxSVGA or VBoxVGA.
+<img width="965" height="632" alt="Screenshot 2026-09-12 230144" src="https://github.com/user-attachments/assets/d4685184-3297-4a37-ba65-ff3bdde92ccb" />
+
+• Start the VM — the Android-x86 boot menu will appear
+<img width="777" height="460" alt="Screenshot 2026-09-12 152223" src="https://github.com/user-attachments/assets/7a3a9ed5-358d-4afe-adc0-64b16f12b58e" />
+
+• Choose Installation - Install Android-x86 to harddisk
+• Create/modify partitions, select the virtual disk, choose ext4 filesystem, confirm
+<img width="793" height="453" alt="Screenshot 2026-09-12 152412" src="https://github.com/user-attachments/assets/54c4d09f-3078-4550-8036-90f76b4b8dfb" />
+
+• Choose to install GRUB and make the system writable (yes to both)
+<img width="772" height="442" alt="Screenshot 2026-09-12 152451" src="https://github.com/user-attachments/assets/bdaecdf2-1cea-456e-a7d4-bddadb569e26" />
+<img width="840" height="467" alt="Screenshot 2026-09-12 152507" src="https://github.com/user-attachments/assets/1e202ffb-702b-4a25-8957-3c966ef910f6" />
+
+• Let it install, then reboot when prompted
+<img width="781" height="458" alt="Screenshot 2026-09-12 152514" src="https://github.com/user-attachments/assets/371ff664-5a4b-44e8-a9a4-67fd2f316a35" />
+
+
 ### Static IP Configuration
 
 Android-x86 in VirtualBox exposes its network as a simulated Wi-Fi adapter (**VirtWifi**) rather than a physical Ethernet interface, so the static IP was set via **Settings > Network & Internet > Wi-Fi > VirtWifi**:
@@ -203,8 +227,8 @@ Network prefix length: 24
 DNS 1:                8.8.8.8
 ```
 
-![Android static IP configuration](8-screenshot-android-ip-config.png)
-<!-- SCREENSHOT: Android VirtWifi static IP screen -->
+<img width="1015" height="852" alt="Screenshot 2026-09-12 225324" src="https://github.com/user-attachments/assets/793fcaf2-3f26-4aeb-928e-34f3b5ba920c" />
+SCREENSHOT: Android VirtWifi static IP screen
 
 ---
 
