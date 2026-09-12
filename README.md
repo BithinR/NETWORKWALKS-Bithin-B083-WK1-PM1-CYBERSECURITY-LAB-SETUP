@@ -250,13 +250,13 @@ SCREENSHOT: Android VirtWifi static IP screen
 ### Screenshots — Connectivity Proof
 
 <img width="1253" height="682" alt="Screenshot 2026-09-12 202129" src="https://github.com/user-attachments/assets/f50bb818-24e8-4b5d-8bed-66e48603fcbd" />
-<!-- SCREENSHOT: Kali terminal pinging 10.0.0.10 and 10.0.0.9 -->
+SCREENSHOT: Kali terminal pinging 10.0.0.10 and 10.0.0.9
 
 <img width="1022" height="758" alt="Screenshot 2026-09-12 211628" src="https://github.com/user-attachments/assets/4f3f561b-388d-497c-81cd-ffbeeacb2702" />
-<!-- SCREENSHOT: Android console/terminal pinging 10.0.0.2 and 10.0.0.10 -->
+SCREENSHOT: Android console/terminal pinging 10.0.0.2 and 10.0.0.10
 
 <img width="1016" height="858" alt="Screenshot 2026-09-12 211440" src="https://github.com/user-attachments/assets/47c09d01-1c32-41b1-96f2-f2e457c03a99" />
-<!-- SCREENSHOT: Windows Command Prompt pinging 10.0.0.2 and 10.0.0.9 -->
+SCREENSHOT: Windows Command Prompt pinging 10.0.0.2 and 10.0.0.9
 
 ---
 
