@@ -64,8 +64,8 @@ This lab provides an isolated, controlled environment for cybersecurity learning
 
 ## 🏗️ Lab Architecture
 
-![Lab architecture overview](1-screenshot-lab-architecture.png)
-<!-- SCREENSHOT: overall VirtualBox Manager view showing all 3 VMs, or a network diagram -->
+<img width="1847" height="1010" alt="Screenshot 2026-09-12 213918" src="https://github.com/user-attachments/assets/8965a409-1587-4f02-914d-432725695681" />
+SCREENSHOT: overall VirtualBox Manager view showing all 3 VMs.
 
 All three virtual machines sit on the same VirtualBox NAT Network and can reach one another directly, as well as reach the internet through the NAT gateway.
 
@@ -108,9 +108,8 @@ IPv4 Prefix:  10.0.0.0/24
 DHCP:         Enabled
 IPv6:         Disabled
 ```
-
-![NAT Network settings](2-screenshot-nat-network-settings.png)
-<!-- SCREENSHOT: VirtualBox > Network > NAT Networks tab -->
+<img width="1847" height="997" alt="Screenshot 2026-09-12 214505" src="https://github.com/user-attachments/assets/24974ab3-aa5b-4558-b9d8-b2f3b6030304" />
+SCREENSHOT: VirtualBox > Network > NAT Networks tab
 
 A **NAT Network** (rather than plain NAT) was used specifically because it allows multiple VMs to see and reach each other on the same virtual subnet, while still providing outbound internet access — required for connecting Kali, Windows, and Android together.
 
@@ -129,8 +128,9 @@ Promiscuous Mode: Allow All
 RAM: 2048 MB
 ```
 
-![Kali Linux VM settings](3-screenshot-kali-vm-settings.png)
-<!-- SCREENSHOT: Kali VM network settings -->
+<img width="1476" height="902" alt="Screenshot 2026-09-12 142743" src="https://github.com/user-attachments/assets/97cbd086-2a76-4ea5-a54b-999c1b273a49" />
+SCREENSHOT: Kali VM network settings
+
 
 ### Static IP Configuration
 
@@ -141,8 +141,8 @@ Gateway:     10.0.0.1
 DNS:         8.8.8.8
 ```
 
-![Kali network configuration](4-screenshot-kali-ip-config.png)
-<!-- SCREENSHOT: Kali IP settings via GUI / ip a output -->
+<img width="1273" height="895" alt="Screenshot 2026-09-12 144002" src="https://github.com/user-attachments/assets/d6e08875-500d-4e28-9f5c-8c018387f82e" />
+SCREENSHOT: Kali IP settings via GUI / ip a output
 
 ---
 
@@ -158,8 +158,8 @@ Adapter Type: Intel PRO/1000 MT Desktop
 RAM: 4096 MB
 ```
 
-![Windows 10 VM network settings](5-screenshot-windows-vm-settings.png)
-<!-- SCREENSHOT: Windows VM network settings -->
+<img width="1387" height="847" alt="Screenshot 2026-09-12 173201" src="https://github.com/user-attachments/assets/da6eac21-fa09-445f-948c-926d34489f26" />
+SCREENSHOT: Windows VM network settings
 
 ### Static IP Configuration
 
@@ -170,8 +170,8 @@ Default Gateway: 10.0.0.1
 Preferred DNS:   8.8.8.8
 ```
 
-![Windows IP configuration](6-screenshot-windows-ip-config.png)
-<!-- SCREENSHOT: Windows TCP/IPv4 properties -->
+<img width="1011" height="866" alt="Screenshot 2026-09-12 182515" src="https://github.com/user-attachments/assets/fbc5afa4-01a6-482f-a1d2-cda4356f564a" />
+SCREENSHOT: Windows TCP/IPv4 properties 
 
 ---
 
@@ -189,8 +189,8 @@ Display:
   Graphics Controller: VBoxVGA
 ```
 
-![Android VM settings](7-screenshot-android-vm-settings.png)
-<!-- SCREENSHOT: Android VM display/network settings -->
+<img width="1532" height="911" alt="Screenshot 2026-09-12 152825" src="https://github.com/user-attachments/assets/0ce105d3-14e1-43da-9f28-fc1adbbd2788" />
+SCREENSHOT: Android VM display/network settings
 
 ### Static IP Configuration
 
@@ -208,20 +208,6 @@ DNS 1:                8.8.8.8
 
 ---
 
-## Step 6. Create Clean VM Snapshots
-
-After completing configuration, a snapshot was taken of each VM to establish a known-good baseline.
-
-```text
-Kali    -> "Clean Kali - Network Setup"
-Windows -> "Clean Windows10 - Network Setup"
-Android -> "Clean Android9 - Network Setup"
-```
-
-![VM snapshots](9-screenshot-snapshots.png)
-<!-- SCREENSHOT: Snapshot list in VirtualBox for each VM -->
-
----
 
 # 🔎 Lab Verification
 
@@ -239,16 +225,13 @@ Android -> "Clean Android9 - Network Setup"
 
 ### Screenshots — Connectivity Proof
 
-![Kali to Windows ping](10-screenshot-kali-windows-ping.png)
-<!-- SCREENSHOT: Kali terminal pinging 10.0.0.10 -->
+<img width="1253" height="682" alt="Screenshot 2026-09-12 202129" src="https://github.com/user-attachments/assets/f50bb818-24e8-4b5d-8bed-66e48603fcbd" />
+<!-- SCREENSHOT: Kali terminal pinging 10.0.0.10 and 10.0.0.9 -->
 
-![Kali to Android ping](11-screenshot-kali-android-ping.png)
-<!-- SCREENSHOT: Kali terminal pinging 10.0.0.9 -->
+<img width="1022" height="758" alt="Screenshot 2026-09-12 211628" src="https://github.com/user-attachments/assets/4f3f561b-388d-497c-81cd-ffbeeacb2702" />
+<!-- SCREENSHOT: Android console/terminal pinging 10.0.0.2 and 10.0.0.10 -->
 
-![Android to Kali ping](12-screenshot-android-kali-ping.png)
-<!-- SCREENSHOT: Android console/terminal pinging 10.0.0.2 -->
-
-![Windows to Kali and Android ping](13-screenshot-windows-pings.png)
+<img width="1016" height="858" alt="Screenshot 2026-09-12 211440" src="https://github.com/user-attachments/assets/47c09d01-1c32-41b1-96f2-f2e457c03a99" />
 <!-- SCREENSHOT: Windows Command Prompt pinging 10.0.0.2 and 10.0.0.9 -->
 
 ---
@@ -282,10 +265,6 @@ Android -> "Clean Android9 - Network Setup"
 **Cause:** Windows Defender Firewall blocks inbound ICMP Echo Requests by default, so Windows would not reply to pings even though outbound pings from Windows worked fine.
 
 **Solution:** Enabled the *File and Printer Sharing (Echo Request - ICMPv4-In)* inbound rule in Windows Defender Firewall with Advanced Security, which allowed Windows to reply to ping requests from Kali and Android.
-
----
-
-<!-- Add any additional issues you personally ran into below, following the same format -->
 
 ---
 
@@ -328,10 +307,10 @@ This laboratory is intended strictly for education and authorized testing purpos
 
 # 👤 Author
 
-**[YOUR NAME]**
+**Bithin Krishna Radhakrishnan**
 Cybersecurity Intern, Batch B083
 
-LinkedIn: [your LinkedIn profile URL]
+LinkedIn: www.linkedin.com/in/bkr95
 
 ---
 
